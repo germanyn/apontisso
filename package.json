@@ -1,0 +1,17 @@
+{
+  "name": "apontisso",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces":[
+    "services/*"
+  ],
+  "version": "1.0.0",
+  "author": "Germano Gascho <germanogascho@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "db": "docker-compose -f ./dynamodb/docker-compose.yml up",
+    "infra": "docker-compose up"
+  }
+}

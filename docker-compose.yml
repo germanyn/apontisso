@@ -1,0 +1,46 @@
+version: '3.7'
+
+services:
+  
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    environment:
+     - SERVICES=s3,sns,sqs
+     - DEFAULT_REGION=us-east-1
+     - DATA_DIR=/tmp/localstack/data
+     - HOST_TMP_FOLDER=/tmp/localstack
+     - DEBUG=1
+    ports:
+      - "4566:4566"
+      - "4571:4571"
+      - "9999:8080"
+    volumes:
+      - localstack-data:/tmp/localstack
+  dynamodb:
+    image:  amazon/dynamodb-local
+    container_name: apontisso-dynamodb
+    hostname: dynamodb
+    restart: always
+    volumes:
+      -  ./my-dynamodb-data:/home/dynamodblocal/data
+    ports:
+      - 8835:8000
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data/"
+  dynamodb-admin:
+    container_name: apontisso-db-admin
+    depends_on:
+      - dynamodb
+    image: aaronshaf/dynamodb-admin
+    ports:
+      - 8400:8001
+    environment:
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: local
+      AWS_SECRET_ACCESS_KEY: local
+      DYNAMO_ENDPOINT: http://dynamodb:8000
+
+volumes:
+
+  localstack-data:
+    name: localstack-data

@@ -1,0 +1,14 @@
+{
+  "topics": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "user-created-arn": "string"
+      }
+    ],
+    "value": {
+      "user-created-arn": "arn:aws:sns:us-east-1:000000000000:user-created-topic"
+    }
+  }
+}

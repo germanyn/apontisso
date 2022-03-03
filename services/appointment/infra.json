@@ -1,0 +1,69 @@
+{
+  "main": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "userCreatedQueueArn": [
+          "object",
+          {
+            "arn": "string",
+            "content_based_deduplication": "bool",
+            "deduplication_scope": "string",
+            "delay_seconds": "number",
+            "fifo_queue": "bool",
+            "fifo_throughput_limit": "string",
+            "id": "string",
+            "kms_data_key_reuse_period_seconds": "number",
+            "kms_master_key_id": "string",
+            "max_message_size": "number",
+            "message_retention_seconds": "number",
+            "name": "string",
+            "name_prefix": "string",
+            "policy": "string",
+            "receive_wait_time_seconds": "number",
+            "redrive_allow_policy": "string",
+            "redrive_policy": "string",
+            "sqs_managed_sse_enabled": "bool",
+            "tags": [
+              "map",
+              "string"
+            ],
+            "tags_all": [
+              "map",
+              "string"
+            ],
+            "url": "string",
+            "visibility_timeout_seconds": "number"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "userCreatedQueueArn": {
+        "arn": "arn:aws:sqs:us-east-1:000000000000:appointment_user-created-queue",
+        "content_based_deduplication": false,
+        "deduplication_scope": "",
+        "delay_seconds": 0,
+        "fifo_queue": false,
+        "fifo_throughput_limit": "",
+        "id": "http://localhost:4566/000000000000/appointment_user-created-queue",
+        "kms_data_key_reuse_period_seconds": 300,
+        "kms_master_key_id": "",
+        "max_message_size": 262144,
+        "message_retention_seconds": 345600,
+        "name": "appointment_user-created-queue",
+        "name_prefix": "",
+        "policy": "",
+        "receive_wait_time_seconds": 0,
+        "redrive_allow_policy": "",
+        "redrive_policy": "",
+        "sqs_managed_sse_enabled": false,
+        "tags": {},
+        "tags_all": {},
+        "url": "http://localhost:4566/000000000000/appointment_user-created-queue",
+        "visibility_timeout_seconds": 30
+      }
+    }
+  }
+}

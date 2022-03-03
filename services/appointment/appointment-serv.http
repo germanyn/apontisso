@@ -1,0 +1,10 @@
+GET http://localhost:{{$dotenv PORT}}/dev/appointments
+
+###
+
+POST http://localhost:{{$dotenv PORT}}/dev/appointments
+
+{
+	"project": "Import Tools",
+	"userId": "f3be37ee-f3bd-43ca-ad0f-a158ee40635f"
+}

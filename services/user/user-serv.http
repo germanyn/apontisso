@@ -1,0 +1,9 @@
+GET http://localhost:{{$dotenv PORT}}/dev/users
+
+###
+
+POST http://localhost:{{$dotenv PORT}}/dev/users
+
+{
+	"name": "Desenvolvedor Test"
+}
